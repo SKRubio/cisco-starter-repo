@@ -1,17 +1,21 @@
+import React  from "react";
 import './index.css';
-import DataPoint from './DataPoint';
+import './Banner.css';
 import Banner from './Banner';
+import {GetIPaddress} from './GetIPaddress';
 
-function App() {
-  return (
-    <div>
-      <Banner text = "SEXTANT DASHBOARD" />
-      <div className="card">
-        <DataPoint title = "IP Adress: " data = "192.168.1.1" />
-        <DataPoint title = "Latency:" data = "1200ms"/>
+class App extends React.Component {
+   render(){
+    return (
+      <div>
+        <Banner text = "SEXTANT" />
+        <div className="card">
+          <GetIPaddress type = "ipv4"/>
+          <GetIPaddress type = "ipv6"/>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
